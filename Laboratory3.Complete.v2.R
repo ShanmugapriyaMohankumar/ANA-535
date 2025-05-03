@@ -10,6 +10,7 @@
 #
 #Load all the necessary libraries
 #
+sink("Lab3_output.txt", append = FALSE, split = TRUE)
 
 library(xlsx)
 library(fpp3)
@@ -1054,3 +1055,4 @@ ses.opt.pred <- forecast(ses.opt, h = nValid, level = 0)
 ses.opt
 accuracy(ses.pred, valid.ts)
 accuracy(ses.opt.pred, valid.ts)
+sink()
