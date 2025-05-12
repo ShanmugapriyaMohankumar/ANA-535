@@ -1,0 +1,191 @@
+-/                                                                                                             /                                                                                                             -                                                                                                             tibble [915 × 3] (S3: tbl_df/tbl/data.frame)
+ $ DATE           : POSIXct[1:915], format: "1948-01-01" "1948-02-01" "1948-03-01" "1948-04-01" ...
+ $ GBRPROINDMISMEI: num [1:915] 28.2 28.2 28.2 28.1 28.2 ...
+ $ USAPROINDMISMEI: num [1:915] 14.2 14.2 14.1 14.1 14.3 ...
+      DATE                         GBRPROINDMISMEI  USAPROINDMISMEI 
+ Min.   :1948-01-01 00:00:00.000   Min.   : 28.12   Min.   : 13.06  
+ 1st Qu.:1967-01-16 12:00:00.000   1st Qu.: 51.87   1st Qu.: 34.53  
+ Median :1986-02-01 00:00:00.000   Median : 70.56   Median : 54.47  
+ Mean   :1986-01-30 14:46:01.967   Mean   : 72.51   Mean   : 59.68  
+ 3rd Qu.:2005-02-15 00:00:00.000   3rd Qu.: 97.26   3rd Qu.: 91.48  
+ Max.   :2024-03-01 00:00:00.000   Max.   :113.32   Max.   :103.21  
+[1] 0
+# A tibble: 1 × 10
+  GBRPROINDMISMEI_mean USAPROINDMISMEI_mean GBRPROINDMISMEI_sd USAPROINDMISMEI_sd GBRPROINDMISMEI_min
+                 <dbl>                <dbl>              <dbl>              <dbl>               <dbl>
+1                 72.5                 59.7               24.7               29.9                28.1
+# ℹ 5 more variables: USAPROINDMISMEI_min <dbl>, GBRPROINDMISMEI_max <dbl>, USAPROINDMISMEI_max <dbl>,
+#   GBRPROINDMISMEI_median <dbl>, USAPROINDMISMEI_median <dbl>
+  Country     Mean  Std.Dev      Min      Max   Median
+1      UK 72.51168 24.71570 28.12006 113.3228 70.56345
+2      US 59.67704 29.91009 13.05948 103.2091 54.46590
+[1] 0.9835178
+
+	Augmented Dickey-Fuller Test
+
+data:  uk_ts
+Dickey-Fuller = -1.393, Lag order = 9, p-value = 0.8353
+alternative hypothesis: stationary
+
+
+	Augmented Dickey-Fuller Test
+
+data:  us_ts
+Dickey-Fuller = -2.5894, Lag order = 9, p-value = 0.3288
+alternative hypothesis: stationary
+
+[1mindexing[0m [34mUKIndexOfProduction-15Aug2024.csv[0m [=======================================--------] [32m2.15GB/s[0m, eta: [36m 0s[0m[1mindexing[0m [34mUKIndexOfProduction-15Aug2024.csv[0m [===============================================] [32m1.03GB/s[0m, eta: [36m 0s[0m                                                                                                                                                  # A tibble: 6 × 1,134
+  `Important Notes`  ...2  ...3  ...4  ...5  ...6  ...7  ...8  ...9 ...10 ...11 ...12 ...13 ...14 ...15 ...16
+  <chr>             <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
+1 1948                 NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA
+2 1949                 NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA
+3 1950                 NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA
+4 1951                 NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA
+5 1952                 NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA
+6 1953                 NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA
+# ℹ 1,118 more variables: ...17 <dbl>, ...18 <dbl>, ...19 <dbl>, ...20 <dbl>, ...21 <dbl>, ...22 <dbl>,
+#   ...23 <dbl>, ...24 <dbl>, ...25 <dbl>, ...26 <dbl>, ...27 <dbl>, ...28 <dbl>, ...29 <dbl>, ...30 <dbl>,
+#   ...31 <dbl>, ...32 <dbl>, ...33 <dbl>, ...34 <dbl>, ...35 <dbl>, ...36 <dbl>, ...37 <dbl>, ...38 <dbl>,
+#   ...39 <dbl>, ...40 <dbl>, ...41 <dbl>, ...42 <dbl>, ...43 <dbl>, ...44 <dbl>, ...45 <dbl>, ...46 <dbl>,
+#   ...47 <dbl>, ...48 <dbl>, ...49 <dbl>, ...50 <dbl>, ...51 <dbl>, ...52 <dbl>, ...53 <dbl>, ...54 <dbl>,
+#   ...55 <dbl>, ...56 <dbl>, ...57 <dbl>, ...58 <dbl>, ...59 <dbl>, ...60 <dbl>, ...61 <dbl>, ...62 <dbl>,
+#   ...63 <dbl>, ...64 <dbl>, ...65 <dbl>, ...66 <dbl>, ...67 <dbl>, ...68 <dbl>, ...69 <dbl>, ...70 <dbl>, …
+# ℹ Use `colnames()` to see all variable names
+# A tibble: 1 × 25
+  Year_mean Year_sd Year_median Year_min Year_max ...2_mean ...2_sd ...2_median ...2_min ...2_max ...3_mean
+      <dbl>   <dbl>       <dbl>    <dbl>    <dbl>     <dbl>   <dbl>       <dbl>    <dbl>    <dbl>     <dbl>
+1     1986.    22.1       1986.     1948     2023   155894.  19462.     151487.  131536.  196367.   334345.
+# ℹ 14 more variables: ...3_sd <dbl>, ...3_median <dbl>, ...3_min <dbl>, ...3_max <dbl>, ...4_mean <dbl>,
+#   ...4_sd <dbl>, ...4_median <dbl>, ...4_min <dbl>, ...4_max <dbl>, ...5_mean <dbl>, ...5_sd <dbl>,
+#   ...5_median <dbl>, ...5_min <dbl>, ...5_max <dbl>
+[1] "...2" "...3" "...4" "...5"
+  Sector   Mean Std.Dev Median  Min  Max
+1   ...2 1985.5   22.08 1985.5 1948 2023
+2   ...3 1985.5   22.08 1985.5 1948 2023
+3   ...4 1985.5   22.08 1985.5 1948 2023
+4   ...5 1985.5   22.08 1985.5 1948 2023
+
+	Augmented Dickey-Fuller Test
+
+data:  uk_diff
+Dickey-Fuller = -10.594, Lag order = 9, p-value = 0.01
+alternative hypothesis: stationary
+
+
+	Augmented Dickey-Fuller Test
+
+data:  us_diff
+Dickey-Fuller = -7.5838, Lag order = 9, p-value = 0.01
+alternative hypothesis: stationary
+
+Series: uk_ts 
+ARIMA(2,1,1) with drift 
+
+Coefficients:
+         ar1      ar2      ma1   drift
+      0.6289  -0.1126  -0.6778  0.0787
+s.e.  0.0852   0.0358   0.0808  0.0262
+
+sigma^2 = 1.411:  log likelihood = -1452.42
+AIC=2914.83   AICc=2914.9   BIC=2938.92
+
+Training set error measures:
+                        ME     RMSE       MAE         MPE      MAPE     MASE         ACF1
+Training set -6.729371e-05 1.184766 0.6952727 0.005857816 0.9215227 0.275385 -0.003167097
+Series: us_ts 
+ARIMA(0,1,1) with drift 
+
+Coefficients:
+         ma1   drift
+      0.2660  0.0959
+s.e.  0.0328  0.0279
+
+sigma^2 = 0.4449:  log likelihood = -925.79
+AIC=1857.57   AICc=1857.6   BIC=1872.02
+
+Training set error measures:
+                        ME      RMSE       MAE         MPE      MAPE    MASE        ACF1
+Training set -9.159538e-06 0.6658898 0.3437575 -0.01457196 0.6448725 0.14031 -0.01095181
+ETS(M,A,N) 
+
+Call:
+ets(y = uk_ts, model = "ZZZ")
+
+  Smoothing parameters:
+    alpha = 0.9171 
+    beta  = 1e-04 
+
+  Initial states:
+    l = 27.7115 
+    b = 0.1008 
+
+  sigma:  0.0144
+
+     AIC     AICc      BIC 
+6200.871 6200.937 6224.965 
+
+Training set error measures:
+                      ME     RMSE      MAE         MPE      MAPE      MASE       ACF1
+Training set -0.02335414 1.204475 0.675248 -0.03332637 0.8986199 0.2674536 0.04777763
+ETS(M,Ad,N) 
+
+Call:
+ets(y = us_ts, model = "ZZZ")
+
+  Smoothing parameters:
+    alpha = 0.9999 
+    beta  = 0.2129 
+    phi   = 0.8 
+
+  Initial states:
+    l = 14.1289 
+    b = -0.1466 
+
+  sigma:  0.0105
+
+     AIC     AICc      BIC 
+5102.883 5102.976 5131.797 
+
+Training set error measures:
+                     ME      RMSE       MAE      MPE      MAPE      MASE       ACF1
+Training set 0.05226291 0.6847711 0.3331822 0.118887 0.6312125 0.1359935 0.08091648
+                        ME     RMSE       MAE         MPE      MAPE     MASE         ACF1
+Training set -6.729371e-05 1.184766 0.6952727 0.005857816 0.9215227 0.275385 -0.003167097
+                      ME     RMSE      MAE         MPE      MAPE      MASE       ACF1
+Training set -0.02335414 1.204475 0.675248 -0.03332637 0.8986199 0.2674536 0.04777763
+                        ME      RMSE       MAE         MPE      MAPE    MASE        ACF1
+Training set -9.159538e-06 0.6658898 0.3437575 -0.01457196 0.6448725 0.14031 -0.01095181
+                     ME      RMSE       MAE      MPE      MAPE      MASE       ACF1
+Training set 0.05226291 0.6847711 0.3331822 0.118887 0.6312125 0.1359935 0.08091648
+
+	Ljung-Box test
+
+data:  Residuals from ARIMA(2,1,1) with drift
+Q* = 41.764, df = 21, p-value = 0.004505
+
+Model df: 3.   Total lags used: 24
+
+
+	Ljung-Box test
+
+data:  Residuals from ETS(M,A,N)
+Q* = 53.13, df = 24, p-value = 0.0005561
+
+Model df: 0.   Total lags used: 24
+
+
+	Ljung-Box test
+
+data:  Residuals from ARIMA(0,1,1) with drift
+Q* = 58.913, df = 23, p-value = 5.477e-05
+
+Model df: 1.   Total lags used: 24
+
+
+	Ljung-Box test
+
+data:  Residuals from ETS(M,Ad,N)
+Q* = 79.538, df = 24, p-value = 7.207e-08
+
+Model df: 0.   Total lags used: 24
+
