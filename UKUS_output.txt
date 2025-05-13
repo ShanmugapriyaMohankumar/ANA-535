@@ -1,3 +1,14 @@
+
+===== ANA535 Course Project Execution Started:  2025-05-12 19:36:34 EDT  =====
+
+
+
+=====  Step 1: Data Import and Setup  =====
+
+
+
+=====  Step 1: Load Excel and Plot Raw Data  =====
+
 -/                                                                                                             /                                                                                                             -                                                                                                             tibble [915 × 3] (S3: tbl_df/tbl/data.frame)
  $ DATE           : POSIXct[1:915], format: "1948-01-01" "1948-02-01" "1948-03-01" "1948-04-01" ...
  $ GBRPROINDMISMEI: num [1:915] 28.2 28.2 28.2 28.1 28.2 ...
@@ -9,17 +20,90 @@
  Mean   :1986-01-30 14:46:01.967   Mean   : 72.51   Mean   : 59.68  
  3rd Qu.:2005-02-15 00:00:00.000   3rd Qu.: 97.26   3rd Qu.: 91.48  
  Max.   :2024-03-01 00:00:00.000   Max.   :113.32   Max.   :103.21  
-[1] 0
+Number of missing values: 0 
 # A tibble: 1 × 10
   GBRPROINDMISMEI_mean USAPROINDMISMEI_mean GBRPROINDMISMEI_sd USAPROINDMISMEI_sd GBRPROINDMISMEI_min
                  <dbl>                <dbl>              <dbl>              <dbl>               <dbl>
 1                 72.5                 59.7               24.7               29.9                28.1
 # ℹ 5 more variables: USAPROINDMISMEI_min <dbl>, GBRPROINDMISMEI_max <dbl>, USAPROINDMISMEI_max <dbl>,
 #   GBRPROINDMISMEI_median <dbl>, USAPROINDMISMEI_median <dbl>
+[1] "Renamed summary statistics:"
+# A tibble: 1 × 10
+  UK_Mean US_Mean UK_SD US_SD UK_Min US_Min UK_Max US_Max UK_Median US_Median
+    <dbl>   <dbl> <dbl> <dbl>  <dbl>  <dbl>  <dbl>  <dbl>     <dbl>     <dbl>
+1    72.5    59.7  24.7  29.9   28.1   13.1   113.   103.      70.6      54.5
+
+
+=====  Step 2: Summary Table, Time Series Setup, and EDA Plots  =====
+
   Country     Mean  Std.Dev      Min      Max   Median
 1      UK 72.51168 24.71570 28.12006 113.3228 70.56345
 2      US 59.67704 29.91009 13.05948 103.2091 54.46590
-[1] 0.9835178
+NULL
+NULL
+NULL
+NULL
+$breaks
+ [1]  25  30  35  40  45  50  55  60  65  70  75  80  85  90  95 100 105 110 115
+
+$counts
+ [1] 14 55 66 49 17 41 66 90 53 26 71 34 20 61 82 81 72 17
+
+$density
+ [1] 0.003060109 0.012021858 0.014426230 0.010710383 0.003715847 0.008961749 0.014426230 0.019672131
+ [9] 0.011584699 0.005683060 0.015519126 0.007431694 0.004371585 0.013333333 0.017923497 0.017704918
+[17] 0.015737705 0.003715847
+
+$mids
+ [1]  27.5  32.5  37.5  42.5  47.5  52.5  57.5  62.5  67.5  72.5  77.5  82.5  87.5  92.5  97.5 102.5 107.5
+[18] 112.5
+
+$xname
+[1] "uk_ts"
+
+$equidist
+[1] TRUE
+
+attr(,"class")
+[1] "histogram"
+$breaks
+ [1]  10  15  20  25  30  35  40  45  50  55  60  65  70  75  80  85  90  95 100 105
+
+$counts
+ [1] 28 66 79 31 33 56 46 54 72 18 66 14 20 12 16 55 63 99 87
+
+$density
+ [1] 0.006120219 0.014426230 0.017267760 0.006775956 0.007213115 0.012240437 0.010054645 0.011803279
+ [9] 0.015737705 0.003934426 0.014426230 0.003060109 0.004371585 0.002622951 0.003497268 0.012021858
+[17] 0.013770492 0.021639344 0.019016393
+
+$mids
+ [1]  12.5  17.5  22.5  27.5  32.5  37.5  42.5  47.5  52.5  57.5  62.5  67.5  72.5  77.5  82.5  87.5  92.5
+[18]  97.5 102.5
+
+$xname
+[1] "us_ts"
+
+$equidist
+[1] TRUE
+
+attr(,"class")
+[1] "histogram"
+
+
+=====  Step 3: Q-Q Plots, Composite Diagnostics, Correlation, ADF  =====
+
+NULL
+NULL
+TableGrob (2 x 2) "arrange": 4 grobs
+  z     cells    name           grob
+1 1 (1-1,1-1) arrange gtable[layout]
+2 2 (1-1,2-2) arrange gtable[layout]
+3 3 (2-2,1-1) arrange gtable[layout]
+4 4 (2-2,2-2) arrange gtable[layout]
+Correlation between UK and US Production Indices: 0.9835178 
+
+UK ADF Test:
 
 	Augmented Dickey-Fuller Test
 
@@ -28,13 +112,19 @@ Dickey-Fuller = -1.393, Lag order = 9, p-value = 0.8353
 alternative hypothesis: stationary
 
 
+US ADF Test:
+
 	Augmented Dickey-Fuller Test
 
 data:  us_ts
 Dickey-Fuller = -2.5894, Lag order = 9, p-value = 0.3288
 alternative hypothesis: stationary
 
-[1mindexing[0m [34mUKIndexOfProduction-15Aug2024.csv[0m [=======================================--------] [32m2.15GB/s[0m, eta: [36m 0s[0m[1mindexing[0m [34mUKIndexOfProduction-15Aug2024.csv[0m [===============================================] [32m1.03GB/s[0m, eta: [36m 0s[0m                                                                                                                                                  # A tibble: 6 × 1,134
+
+
+=====  Step 4: EDA for UKIndexOfProduction – Sectoral Trends  =====
+
+[1mindexing[0m [34mUKIndexOfProduction-15Aug2024.csv[0m [==============---------------------------------] [32m2.15GB/s[0m, eta: [36m 0s[0m[1mindexing[0m [34mUKIndexOfProduction-15Aug2024.csv[0m [=============================================] [32m168.05MB/s[0m, eta: [36m 0s[0m                                                                                                                                                  # A tibble: 6 × 1,134
   `Important Notes`  ...2  ...3  ...4  ...5  ...6  ...7  ...8  ...9 ...10 ...11 ...12 ...13 ...14 ...15 ...16
   <chr>             <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
 1 1948                 NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA
@@ -58,12 +148,17 @@ alternative hypothesis: stationary
 # ℹ 14 more variables: ...3_sd <dbl>, ...3_median <dbl>, ...3_min <dbl>, ...3_max <dbl>, ...4_mean <dbl>,
 #   ...4_sd <dbl>, ...4_median <dbl>, ...4_min <dbl>, ...4_max <dbl>, ...5_mean <dbl>, ...5_sd <dbl>,
 #   ...5_median <dbl>, ...5_min <dbl>, ...5_max <dbl>
-[1] "...2" "...3" "...4" "...5"
+[1] "Summary Table by Sector:"
   Sector   Mean Std.Dev Median  Min  Max
 1   ...2 1985.5   22.08 1985.5 1948 2023
 2   ...3 1985.5   22.08 1985.5 1948 2023
 3   ...4 1985.5   22.08 1985.5 1948 2023
 4   ...5 1985.5   22.08 1985.5 1948 2023
+
+
+=====  Step 5: Confirmatory Data Analysis and Modeling  =====
+
+ADF Test – UK Differenced:
 
 	Augmented Dickey-Fuller Test
 
@@ -71,6 +166,7 @@ data:  uk_diff
 Dickey-Fuller = -10.594, Lag order = 9, p-value = 0.01
 alternative hypothesis: stationary
 
+ADF Test – US Differenced:
 
 	Augmented Dickey-Fuller Test
 
@@ -78,6 +174,7 @@ data:  us_diff
 Dickey-Fuller = -7.5838, Lag order = 9, p-value = 0.01
 alternative hypothesis: stationary
 
+UK ARIMA Summary:
 Series: uk_ts 
 ARIMA(2,1,1) with drift 
 
@@ -92,6 +189,7 @@ AIC=2914.83   AICc=2914.9   BIC=2938.92
 Training set error measures:
                         ME     RMSE       MAE         MPE      MAPE     MASE         ACF1
 Training set -6.729371e-05 1.184766 0.6952727 0.005857816 0.9215227 0.275385 -0.003167097
+US ARIMA Summary:
 Series: us_ts 
 ARIMA(0,1,1) with drift 
 
@@ -106,6 +204,7 @@ AIC=1857.57   AICc=1857.6   BIC=1872.02
 Training set error measures:
                         ME      RMSE       MAE         MPE      MAPE    MASE        ACF1
 Training set -9.159538e-06 0.6658898 0.3437575 -0.01457196 0.6448725 0.14031 -0.01095181
+UK ETS Summary:
 ETS(M,A,N) 
 
 Call:
@@ -127,6 +226,7 @@ ets(y = uk_ts, model = "ZZZ")
 Training set error measures:
                       ME     RMSE      MAE         MPE      MAPE      MASE       ACF1
 Training set -0.02335414 1.204475 0.675248 -0.03332637 0.8986199 0.2674536 0.04777763
+US ETS Summary:
 ETS(M,Ad,N) 
 
 Call:
@@ -149,12 +249,16 @@ ets(y = us_ts, model = "ZZZ")
 Training set error measures:
                      ME      RMSE       MAE      MPE      MAPE      MASE       ACF1
 Training set 0.05226291 0.6847711 0.3331822 0.118887 0.6312125 0.1359935 0.08091648
+Accuracy – UK ARIMA:
                         ME     RMSE       MAE         MPE      MAPE     MASE         ACF1
 Training set -6.729371e-05 1.184766 0.6952727 0.005857816 0.9215227 0.275385 -0.003167097
+Accuracy – UK ETS:
                       ME     RMSE      MAE         MPE      MAPE      MASE       ACF1
 Training set -0.02335414 1.204475 0.675248 -0.03332637 0.8986199 0.2674536 0.04777763
+Accuracy – US ARIMA:
                         ME      RMSE       MAE         MPE      MAPE    MASE        ACF1
 Training set -9.159538e-06 0.6658898 0.3437575 -0.01457196 0.6448725 0.14031 -0.01095181
+Accuracy – US ETS:
                      ME      RMSE       MAE      MPE      MAPE      MASE       ACF1
 Training set 0.05226291 0.6847711 0.3331822 0.118887 0.6312125 0.1359935 0.08091648
 
@@ -168,10 +272,8 @@ Model df: 3.   Total lags used: 24
 
 	Ljung-Box test
 
-data:  Residuals from ETS(M,A,N)
-Q* = 53.13, df = 24, p-value = 0.0005561
-
-Model df: 0.   Total lags used: 24
+data:  Residuals from ARIMA(2,1,1) with drift
+Q* = 41.764, df = 21, p-value = 0.004505
 
 
 	Ljung-Box test
@@ -184,8 +286,52 @@ Model df: 1.   Total lags used: 24
 
 	Ljung-Box test
 
+data:  Residuals from ARIMA(0,1,1) with drift
+Q* = 58.913, df = 23, p-value = 5.477e-05
+
+
+	Ljung-Box test
+
+data:  Residuals from ETS(M,A,N)
+Q* = 53.13, df = 24, p-value = 0.0005561
+
+Model df: 0.   Total lags used: 24
+
+
+	Ljung-Box test
+
+data:  Residuals from ETS(M,A,N)
+Q* = 53.13, df = 24, p-value = 0.0005561
+
+
+	Ljung-Box test
+
 data:  Residuals from ETS(M,Ad,N)
 Q* = 79.538, df = 24, p-value = 7.207e-08
 
 Model df: 0.   Total lags used: 24
+
+
+	Ljung-Box test
+
+data:  Residuals from ETS(M,Ad,N)
+Q* = 79.538, df = 24, p-value = 7.207e-08
+
+
+
+=====  Step 6: Time Series Linear Regression Forecast – UK and US  =====
+
+Number of PNG plots found in output/plots/ : 28 
+ [1] "qqplot_...2.png"              "qqplot_...3.png"              "qqplot_...4.png"             
+ [4] "qqplot_...5.png"              "sector_histograms.png"        "sector_trend_plot.png"       
+ [7] "uk_arima_forecast.png"        "uk_arima_residuals.png"       "uk_diagnostic_composite.png" 
+[10] "uk_ets_forecast.png"          "uk_ets_residuals.png"         "uk_histogram.png"            
+[13] "uk_lag_plot.png"              "uk_linear_model_forecast.png" "uk_qq_plot.png"              
+[16] "uk_run_sequence.png"          "uk_stl_decomposition.png"     "uk_us_index_plot.png"        
+[19] "us_arima_forecast.png"        "us_arima_residuals.png"       "us_ets_forecast.png"         
+[22] "us_ets_residuals.png"         "us_histogram.png"             "us_lag_plot.png"             
+[25] "us_linear_model_forecast.png" "us_qq_plot.png"               "us_run_sequence.png"         
+[28] "us_stl_decomposition.png"    
+
+===== ANA535 Course Project Execution Ended:  2025-05-12 19:38:03 EDT  =====
 
